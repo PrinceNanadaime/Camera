@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  sql:
+    init:
+      platform: all
+  datasource:
+    url: jdbc:postgresql://localhost:5432/
+    username: postgres
+    password: 1234
+springdoc:
+  packages-to-scan: mqttcamera
+  paths-to-match: /api/**
