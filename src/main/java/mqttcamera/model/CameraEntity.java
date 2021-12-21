@@ -22,6 +22,7 @@ public class CameraEntity {
     @NonNull
     @Column(name = "tag")
     private String tag;
+    @Column(name = "history")
     @OneToMany(targetEntity = AlarmEntity.class,fetch = FetchType.EAGER)
     public List<AlarmEntity> alarmEntities;
 
