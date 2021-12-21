@@ -68,14 +68,6 @@ public class RestApiController {
         repository.delete(alarmById(id));
     }
 
-
-    @Data
-    static class AlarmForm {
-        private Date date;
-        private String description;
-        private CameraEntity camera;
-    }
-
     @Data
     static class MessageForm {
         private String message;
