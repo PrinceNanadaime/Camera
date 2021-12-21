@@ -28,7 +28,7 @@ public class Config {
     public MqttPahoClientFactory mqttClientFactory() {
         DefaultMqttPahoClientFactory factory = new DefaultMqttPahoClientFactory();
         MqttConnectOptions options = new MqttConnectOptions();
-        options.setServerURIs(new String[] { "tcp://localhost:8080" });
+        options.setServerURIs(new String[] { "http://localhost:8080" });
         options.setUserName("Prince");
         String pass = "Nanadaime";
         options.setPassword(pass.toCharArray());
@@ -60,7 +60,7 @@ public class Config {
     public MessageHandler handler() {
         return message -> {
             String topic = Objects.requireNonNull(message.getHeaders().get(MqttHeaders.RECEIVED_TOPIC)).toString();
-            if(topic.equals("/devices/camera")) {
+            if(topic.equals("camera.desk_cam")) {
                 System.out.println("This is the topic");
             }
             System.out.println(message.getPayload());
