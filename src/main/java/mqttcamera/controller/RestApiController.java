@@ -68,13 +68,6 @@ public class RestApiController {
         repository.delete(alarmById(id));
     }
 
-    @PostMapping("/new")
-    public void save(@RequestBody AlarmForm alarmForm) {
-        repository.save(new AlarmEntity(
-                alarmForm.getCamera(),
-                alarmForm.getDate(), alarmForm.getDescription()
-        ));
-    }
 
     @Data
     static class AlarmForm {
