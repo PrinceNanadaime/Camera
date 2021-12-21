@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class BrokerImpl implements Broker, MqttCallback {
 
-    private final IMqttClient client = new MqttClient("things.io.clipboard","tcp://localhost:8080");
+    private final IMqttClient client = new MqttClient("http://homeassistant.local:8091","http://localhost:8080");
 
     public BrokerImpl() throws MqttException {
     }
