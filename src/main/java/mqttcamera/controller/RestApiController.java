@@ -22,8 +22,8 @@ public class RestApiController {
     private final MqttRepositoryImpl<AlarmEntity, Long> repository;
     private Broker broker;
 
-    public RestApiController(MqttRepositoryImpl<AlarmEntity, Long> alarmDevice) {
-        this.repository = alarmDevice;
+    public RestApiController(MqttRepositoryImpl<AlarmEntity, Long> repository) {
+        this.repository = repository;
     }
 
     @PostMapping("/publish")
