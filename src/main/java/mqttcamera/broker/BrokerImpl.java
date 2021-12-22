@@ -57,7 +57,7 @@ public class BrokerImpl implements Broker, MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
         if (!Objects.equals(topic, "camera.desc_cam")) throw new IllegalArgumentException();
-        System.out.println("message is : "+ Arrays.toString(message.getPayload()));
+        System.out.println("message is "+ Arrays.toString(message.getPayload()));
         if (Arrays.toString(message.getPayload()).equals("TRUE")){
             alarmEntityLongMqttRepository.save(new AlarmEntity(
                     cameraEntityLongMqttRepository.findById(1L).get(),new Date(1L),"Motion detected!"));
