@@ -62,7 +62,7 @@ public class RestApiController {
         return repository.getAlarmByID(id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable long id) {
         repository.delete(alarmById(id));
     }
