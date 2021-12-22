@@ -16,7 +16,6 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api")
 public class RestApiController {
 
     private final MqttRepositoryImpl<AlarmEntity, Long> repository;
